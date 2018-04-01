@@ -10,6 +10,7 @@
     <script type="text/javascript" src="bootstrap/js/popper.min.js"></script>
     <script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="font/fontawesome-all.min.js"></script>
+    <script type="text/javascript" src="js/index.js"></script>
 
     <title>Zoologico</title>
   </head>
@@ -29,7 +30,7 @@
           <center>
             <p class="title2">Animales</p>
           </center>
-          <input type="button" class="btn btn-primary form-control" value="Consultar">
+          <input id="animal" type="button" class="btn btn-primary form-control" value="Consultar">
 
         </div>
 
@@ -45,7 +46,7 @@
           <center>
             <p class="title2">Cuidadores</p>
           </center>
-          <input type="button" class="btn btn-primary form-control" value="Consultar">
+          <input id="cuidador" type="button" class="btn btn-primary form-control" value="Consultar">
 
         </div>
 
@@ -61,7 +62,7 @@
           <center>
             <p class="title2">Habitads</p>
           </center>
-          <input type="button" class="btn btn-primary form-control" value="Consultar">
+          <input id="home" type="button" class="btn btn-primary form-control" value="Consultar">
 
         </div>
 
@@ -77,7 +78,7 @@
           <center>
             <p class="title2">Veterinarios</p>
           </center>
-          <input type="button" class="btn btn-primary form-control" value="Consultar">
+          <input id="medico" type="button" class="btn btn-primary form-control" value="Consultar">
 
         </div>
 
@@ -93,7 +94,7 @@
           <center>
             <p class="title2">Revisiones</p>
           </center>
-          <input type="button" class="btn btn-primary form-control" value="Consultar">
+          <input id="consulta" type="button" class="btn btn-primary form-control" value="Consultar">
 
         </div>
 
