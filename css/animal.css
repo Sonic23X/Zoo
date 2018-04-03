@@ -1,6 +1,7 @@
 body
 {
     background-color: #000000;
+    padding: 2% 2% 2% 2%;
 }
 
 .title
@@ -21,6 +22,16 @@ body
   border-color: rgb(10, 51, 143);
   color: #FFFFFF;
   width: 200px;
+  margin-bottom: 2%;
+}
+
+.title3
+{
+  font-size: 40px;
+  text-align: center;
+  border-bottom: solid 2px;
+  border-color: rgb(10, 51, 143);
+  width: 200px;
 }
 
 #tabla
@@ -31,4 +42,39 @@ body
   border-style: solid;
   border-radius: 15px;
   margin-bottom: 2%;
+}
+
+.target
+{
+  padding: 1% 1% 1% 1%;
+  color: ##000000;
+  background-color: #FFFFFF;
+  border-style: none;
+  border-radius: 15px;
+  width: 48%;
+  margin-right: 1%;
+  margin-bottom: 1%;
+}
+
+.icon
+{
+  font-size: 900%;
+  width: 40%;
+  margin-left: 10%;
+}
+
+.info
+{
+  width: 40%;
+}
+
+.icon, .info
+{
+  display: inline-block;
+}
+
+.target, .target
+{
+  display: inline-block;
+  margin-left: 2px;
 }
