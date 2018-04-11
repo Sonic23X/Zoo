@@ -1,8 +1,8 @@
 $(document).ready(function() {
 
-  //Obtener Animales - Tabla
+  //Obtener Cuidadores - Tabla
   $.ajax({
-    url: '../CRUD/animal/select.php',
+    url: '../CRUD/cuidador/select.php',
     type: 'POST',
     success: function(response)
     {
@@ -10,17 +10,17 @@ $(document).ready(function() {
     }
   });
 
-  //Obtener Habitads
+  //Obtener cuidadores
   $.ajax({
-    url: '../CRUD/habitad/select_option.php',
+    url: '../CRUD/cuidador/select_option.php',
     type: 'POST',
     success: function(response)
     {
-      $('#habitad').html(response);
+      $('#person').html(response);
     }
   });
 
-  //eliminar animales
+  //eliminar cuidador
   $.ajax({
     url: '../CRUD/animal/select_option.php',
     type: 'POST',
@@ -30,39 +30,45 @@ $(document).ready(function() {
     }
   });
 
-  //nuevo animal
-  $('#nuevo_animal').submit(function(event) {
+  //nuevo cuidador
+  $('#nuevo_cuidador').submit(function(event) {
 
     event.preventDefault();
 
     var nombre = $('#nombre').val();
-    var especie = $('#especie').val();
-    var pais = $('#pais').val();
-    var estado = $('#estado').val();
-    var peso = $('#peso').val();
-    var altura = $('#altura').val();
-    var dieta = $('#dieta').val();
-    var riesgo = $('#riesgo').val();
-    var sexo = $('#sexo').val();
-    var habitad = $('#habitad').val();
+    var apellidos = $('#apellido').val();
+    var nacionalidad = $('#nacionalidad').val();
+    var telefono = $('#telefono').val();
+    var estado = $('#status').val();
 
-    var datos = "nombre=" + nombre + "&especie=" + especie + "&pais=" + pais + "&estado=" + estado + "&peso=" + peso + "&altura=" + altura
-                      + "&dieta=" + dieta + "&riesgo=" + riesgo + "&sexo=" + sexo + "&habitad=" + habitad;
+    var datos = "nombre=" + nombre + "&apellidos=" + apellidos + "&nacionalidad=" + nacionalidad +
+    "&telefono=" + telefono + "&estado=" + estado;
+
+    alert(datos);
 
     $.ajax({
-      url: '../CRUD/animal/insert.php',
+      url: '../CRUD/cuidador/insert.php',
       type: 'POST',
       data: datos,
       success: function(response)
       {
         if(response == "1")
         {
-          alert("¡Animal Registrado!");
+          alert("Cuidador Registrado!");
           $('#nuevo').modal('toggle');
-          location.reload();
+
+          $.ajax({
+            url: '../CRUD/cuidador/select.php',
+            type: 'POST',
+            success: function(response)
+            {
+              $('#tabla').html(response);
+            }
+          });
         }
         else
           console.log(response);
+          alert(response);
       }
     });
 
@@ -73,10 +79,10 @@ $(document).ready(function() {
   $('#deletethis').click(function(event) {
     event.preventDefault();
 
-    var id = $('#animales').val();
+    var id = $('#person').val();
 
     $.ajax({
-      url: '../CRUD/animal/delete.php',
+      url: '../CRUD/cuidador/delete.php',
       type: 'post',
       data: "id=" + id,
       success: function(response)
@@ -84,10 +90,11 @@ $(document).ready(function() {
         var res = response.split('\n');
         if(res[1] == "1")
         {
-          alert("Animal eliminado");
+          alert("Cuidador eliminado");
           $('#eliminar').modal('toggle');
+
           $.ajax({
-            url: '../CRUD/animal/select.php',
+            url: '../CRUD/cuidador/select.php',
             type: 'POST',
             success: function(response)
             {
@@ -106,9 +113,3 @@ $(document).ready(function() {
   });
 
 });
-
-//colocar imagen
-function set(imagen)
-{
-  $('#imagen_animal').attr('src', '../images/animal/' + imagen);
-}

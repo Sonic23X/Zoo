@@ -1,0 +1,16 @@
+label
+{
+  width: 20%;
+  float: left;
+  display: block;
+}
+
+.etiqueta
+{
+  float: left;
+}
+
+.etiqueta, .texto
+{
+  display: inline-block;
+}

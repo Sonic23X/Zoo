@@ -30,7 +30,9 @@ try
       $content .= "<td style='text-align: center;'>" . $fila->estatus  . "</td>";
       $content .= "<td style='text-align: center;'>" . $fila->sexo  . "</td>";
       $content .= "<td style='text-align: center;'>" . $fila->id_habitad  . "</td>";
-      $content .= "<td style='text-align: center;'>" . $fila->imagen  . "</td>";
+      $content .= "<td style='text-align: center;'>";
+      $content .= "<button onclick=set('".$fila->imagen."') type='button' class='btn btn-secondary' data-toggle='modal' data-target='#IMG'>Ver Imagen</button>";
+      $content .= "</td>";
 
       $content .= "</tr>";
     }
